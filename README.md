@@ -3,6 +3,14 @@ My configuration for emacs (as a backup)
 
 ## Config file structure
 
+~/ .emacs
+   .emacs.rc/
+       |---- rc.el
+   .emacs.local/
+       |---- simpc-mode.el
+   .emacs.d/
+       |---- ... (AUTO GENERATED)
+
 Emacs stores its configuration files at a location denoted by "~/". In Windows, this is "C:\Users\<UserName>\AppData\Roaming\".
 
 - **.emacs** : This is the default config file.
@@ -14,7 +22,16 @@ Additionally, I have added two other folders:
 - **.emacs.rc/** : For certain run commands. In particular, the **rc.el** file is present in this (contains certain definitions, such as for require, etc.)
 - **.emacs.local/** : For additional plugins that have some extensive configuration. For example, **simpc-mode**.
 
-**Note:** The rc.el and simpc-mode.el files are authored by Tsoding / rexim (https://github.com/rexim/dotfiles).
+**Note:** The rc.el and simpc-mode.el files are authored by Tsoding / rexim, and so I have not added them here by myself. (They can be found at https://github.com/rexim/dotfiles).
+
+## Features
+
+Some of the things that this config implements are:
+
+- Modes for some major languages
+- Multiple cursor keybindings
+- Magit (for Git UI)
+- Company (for autocompletion)
 
 ## Acknowledgments / Resources
 
