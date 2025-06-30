@@ -3,6 +3,7 @@ My configuration for emacs (as a backup)
 
 ## Config file structure
 
+```
 ~/ .emacs
    .emacs.rc/
        |---- rc.el
@@ -10,6 +11,7 @@ My configuration for emacs (as a backup)
        |---- simpc-mode.el
    .emacs.d/
        |---- ... (AUTO GENERATED)
+```
 
 Emacs stores its configuration files at a location denoted by "~/". In Windows, this is "C:\Users\<UserName>\AppData\Roaming\".
 
@@ -36,6 +38,7 @@ Some of the things that this config implements are:
 ## Acknowledgments / Resources
 
 Much of this configuration is not written by me. For most of this configuration, I have referred to this brilliant config building Youtube video from Tsoding:
+
 Tsoding Daily (Youtube): Configuring Emacs on My New Laptop, https://www.youtube.com/watch?v=81MdyDYqB-A&t=7014s
 
 Also, some of the files (such as for rc.el and simpc-mode) and configuration details (.emacs) have been obtained from his repository:
