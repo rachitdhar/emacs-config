@@ -1,6 +1,7 @@
 (setq custom-file "~/.emacs.custom.el")
 
 (load-file custom-file)
+(require 'package)
 (load-file "~/.emacs.rc/rc.el")
 
 ;; disable the default behavior
