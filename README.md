@@ -5,6 +5,7 @@ My configuration for emacs (as a backup)
 
 ```
 ~/ .emacs
+   .emacs.custom.el
    .emacs.rc/
        |---- rc.el
    .emacs.local/
