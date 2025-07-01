@@ -9,6 +9,8 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 (setq inhibit-startup-screen t)
+(setq default-directory "D:/GitHub Projects/")
+(add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
 
 ;; Move Text
 (rc/require 'move-text)
