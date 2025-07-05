@@ -9,6 +9,10 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 (setq inhibit-startup-screen t)
+
+(setq-default indent-tabs-mode nil)  ;; use spaces instead of tabs
+(setq-default tab-width 4)           ;; set the width of a tab character to 4 spaces
+
 (setq default-directory "D:/GitHub Projects/")
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
 
