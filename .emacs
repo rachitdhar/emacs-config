@@ -9,6 +9,7 @@
 (menu-bar-mode 0)
 (scroll-bar-mode 0)
 (setq inhibit-startup-screen t)
+(setq make-backup-files nil)
 
 (setq-default indent-tabs-mode nil)  ;; use spaces instead of tabs
 (setq-default tab-width 4)           ;; set the width of a tab character to 4 spaces
