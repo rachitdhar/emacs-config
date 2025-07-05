@@ -86,7 +86,6 @@
 ;; Whitespace mode
 (defun rc/set-up-whitespace-handling ()
   (interactive)
-  (whitespace-mode 1)
   (add-to-list 'write-file-functions 'delete-trailing-whitespace))
 
 (add-hook 'c++-mode-hook 'rc/set-up-whitespace-handling)
