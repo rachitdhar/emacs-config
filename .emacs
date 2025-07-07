@@ -11,9 +11,6 @@
 (setq inhibit-startup-screen t)
 (setq make-backup-files nil)
 
-(setq-default indent-tabs-mode nil)  ;; use spaces instead of tabs
-(setq-default tab-width 4)           ;; set the width of a tab character to 4 spaces
-
 (setq default-directory "D:/GitHub Projects/")
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
 
@@ -129,3 +126,20 @@
             (interactive)
             (company-mode 0)))
 
+;; cycle through buffers (skipping internal buffers)
+(defun my/next-user-buffer ()
+  "Switch to next user buffer."
+  (interactive)
+  (next-buffer)
+  (while (string-match-p "^\\*" (buffer-name))
+    (next-buffer)))
+
+(defun my/previous-user-buffer ()
+  "Switch to previous user buffer."
+  (interactive)
+  (previous-buffer)
+  (while (string-match-p "^\\*" (buffer-name))
+    (previous-buffer)))
+
+(global-set-key (kbd "<f7>") 'my/previous-user-buffer)
+(global-set-key (kbd "<f8>") 'my/next-user-buffer)
