@@ -12,7 +12,7 @@
 (setq make-backup-files nil)
 
 (setq default-directory "D:/GitHub Projects/")
-(add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
+;;(add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
 
 ;; Move Text
 (rc/require 'move-text)
@@ -36,6 +36,8 @@
 (setq display-line-numbers-type 'relative) ; relative line numbers
 
 (rc/require-theme 'gruber-darker)
+;;(rc/require-theme 'constant)
+;;(rc/require-theme 'naysayer)
 (set-face-attribute 'default nil
 		    :family "Consolas"
 		    :height 120
@@ -143,3 +145,13 @@
 
 (global-set-key (kbd "<f7>") 'my/previous-user-buffer)
 (global-set-key (kbd "<f8>") 'my/next-user-buffer)
+
+;; generate project tags (for using etags commands like M-., M-,, etc)
+;; creates a filelist.txt and TAGS file at the path specified
+(defun generate-project-tags (directory)
+  "Prompt for a project directory and generate TAGS file for all files in it (PowerShell version)."
+  (interactive "DSelect project root: ")
+  (let ((default-directory (expand-file-name directory))
+        (ps-command "Get-ChildItem -Recurse -Filter *.* | ForEach-Object { $_.FullName } > filelist.txt; Get-Content filelist.txt | etags -o TAGS -"))
+    (shell-command (concat "powershell -Command \"" ps-command "\""))
+    (message "TAGS generated in %s" default-directory)))
