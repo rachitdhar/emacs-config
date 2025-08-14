@@ -4,6 +4,10 @@
 (require 'package)
 (load-file "~/.emacs.rc/rc.el")
 
+;; set the path for emacs bin folder
+(setenv "PATH" (concat "D:/Softwares/emacs-30.1/bin;" (getenv "PATH")))
+(add-to-list 'exec-path "D:/Softwares/emacs-30.1/bin")
+
 ;; disable the default behavior
 (tool-bar-mode 0)
 (menu-bar-mode 0)
