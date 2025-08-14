@@ -35,6 +35,7 @@ Some of the things that this config implements are:
 - Multiple cursor keybindings
 - Magit (for Git UI)
 - Company (for autocompletion)
+- TAGS generation command (needed for Go to definition, Go to implementation, ...)
 
 ## Acknowledgments / Resources
 
