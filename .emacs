@@ -15,7 +15,7 @@
 (setq inhibit-startup-screen t)
 (setq make-backup-files nil)
 
-(setq default-directory "D:/GitHub Projects/")
+(setq default-directory "D:/github/")
 ;;(add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
 
 ;; Move Text
@@ -37,7 +37,7 @@
 
 ;; appearance
 (global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative) ; relative line numbers
+;;(setq display-line-numbers-type 'relative) ; relative line numbers
 
 (rc/require-theme 'gruber-darker)
 ;;(rc/require-theme 'constant)
@@ -52,6 +52,9 @@
 
 (require 'simpc-mode)
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
+
+(require 'tasm-mode)
+(add-to-list 'auto-mode-alist '("\\.tasm\\'" . tasm-mode))
 
 ;; certain other modes to include
 (rc/require
