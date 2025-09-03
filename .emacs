@@ -154,11 +154,27 @@
 (global-set-key (kbd "<f8>") 'my/next-user-buffer)
 
 ;; generate project tags (for using etags commands like M-., M-,, etc)
-;; creates a filelist.txt and TAGS file at the path specified
-(defun generate-project-tags (directory)
-  "Prompt for a project directory and generate TAGS file for all files in it (PowerShell version)."
-  (interactive "DSelect project root: ")
-  (let ((default-directory (expand-file-name directory))
-        (ps-command "Get-ChildItem -Recurse -Filter *.* | ForEach-Object { $_.FullName } > filelist.txt; Get-Content filelist.txt | etags -o TAGS -"))
+;; creates a filelist.txt and TAGS file at ~/.emacs.tags/<PROJECT_NAME>/
+(defun generate-project-tags (directory project-name)
+  "Generate TAGS and filelist.txt for a project into ~/.emacs.tags/<project-name>/.
+DIRECTORY is the project root, PROJECT-NAME is prompted from the user."
+  (interactive "DSelect project root: \nsProject name: ")
+  (let* ((default-directory (expand-file-name directory))
+         (tags-root (expand-file-name (concat "~/.emacs.tags/" project-name "/")))
+         (filelist (concat tags-root "filelist.txt"))
+         (tagsfile (concat tags-root "TAGS"))
+         (ps-command (format "Get-ChildItem -Recurse -File | ForEach-Object { $_.FullName } > '%s'; Get-Content '%s' | etags -o '%s' -"
+                             filelist filelist tagsfile)))
+    (make-directory tags-root t) ;; ensure directory exists
     (shell-command (concat "powershell -Command \"" ps-command "\""))
-    (message "TAGS generated in %s" default-directory)))
+    (message "TAGS generated in %s" tags-root)))
+
+(defun load-project-tags (tags-dir)
+  "Prompt for a TAGS directory under ~/.emacs.tags and load the TAGS file."
+  (interactive "DSelect TAGS directory: ")
+  (let ((tagsfile (expand-file-name "TAGS" tags-dir)))
+    (if (file-exists-p tagsfile)
+        (progn
+          (visit-tags-table tagsfile)
+          (message "Loaded TAGS from %s" tagsfile))
+      (message "No TAGS file found in %s" tags-dir))))
