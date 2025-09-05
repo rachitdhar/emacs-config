@@ -10,6 +10,7 @@ My configuration for emacs (as a backup)
        |---- rc.el
    .emacs.local/
        |---- simpc-mode.el
+       |---- simpcpp-mode.el
        |---- tasm-mode.el
    .emacs.d/
        |---- ... (AUTO GENERATED)
