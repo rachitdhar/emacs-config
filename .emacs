@@ -51,7 +51,11 @@
 (add-to-list 'load-path "~/.emacs.local/")
 
 (require 'simpc-mode)
-(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
+(add-to-list 'auto-mode-alist '("\\.c\\'" . simpc-mode))
+;;(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
+
+(require 'simpcpp-mode)
+(add-hook 'c++-mode-hook #'simpcpp-indent-mode)
 
 (require 'tasm-mode)
 (add-to-list 'auto-mode-alist '("\\.tasm\\'" . tasm-mode))
