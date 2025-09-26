@@ -42,8 +42,12 @@
 (rc/require-theme 'gruber-darker)
 ;;(rc/require-theme 'constant)
 ;;(rc/require-theme 'naysayer)
+
+(set-face-attribute 'font-lock-preprocessor-face nil
+                   :foreground "#d9d2e9")
+
 (set-face-attribute 'default nil
-		    :family "Consolas"
+		    :family "Cascadia Mono"
 		    :height 120
 		    :weight 'normal) ; font
 
