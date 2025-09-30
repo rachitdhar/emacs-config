@@ -5,8 +5,8 @@
 (load-file "~/.emacs.rc/rc.el")
 
 ;; set the path for emacs bin folder
-(setenv "PATH" (concat "D:/Softwares/emacs-30.1/bin;" (getenv "PATH")))
-(add-to-list 'exec-path "D:/Softwares/emacs-30.1/bin")
+(setenv "PATH" (concat "D:/softwares/emacs/emacs-30.2/bin;" (getenv "PATH")))
+(add-to-list 'exec-path "D:/softwares/emacs/emacs-30.2/bin")
 
 ;; disable the default behavior
 (tool-bar-mode 0)
@@ -39,15 +39,15 @@
 (global-display-line-numbers-mode)
 ;;(setq display-line-numbers-type 'relative) ; relative line numbers
 
-(rc/require-theme 'gruber-darker)
+;;(rc/require-theme 'gruber-darker)
 ;;(rc/require-theme 'constant)
-;;(rc/require-theme 'naysayer)
+(rc/require-theme 'naysayer)
 
 (set-face-attribute 'font-lock-preprocessor-face nil
                    :foreground "#d9d2e9")
 
 (set-face-attribute 'default nil
-		    :family "Cascadia Mono"
+		    :family "Consolas"
 		    :height 120
 		    :weight 'normal) ; font
 
@@ -56,6 +56,7 @@
 
 (require 'simpc-mode)
 (add-to-list 'auto-mode-alist '("\\.c\\'" . simpc-mode))
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
 (require 'simpcpp-mode)
@@ -63,6 +64,9 @@
 
 (require 'tasm-mode)
 (add-to-list 'auto-mode-alist '("\\.tasm\\'" . tasm-mode))
+
+(require 'llvm-mode)
+(add-to-list 'auto-mode-alist '("\\.ll\\'" . llvm-mode))
 
 ;; certain other modes to include
 (rc/require
