@@ -30,6 +30,7 @@ Additionally, I have added two other folders:
 **Note:** The rc.el and simpc-mode.el files are authored by Tsoding / rexim, and so I have not added them here by myself. (They can be found at https://github.com/rexim/dotfiles).
 
 To get tasm-mode.el, see https://github.com/rachitdhar/tasm
+To get llvm-mode.el, see https://github.com/nverno/llvm-mode
 
 ## Features
 
