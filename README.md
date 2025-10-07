@@ -27,10 +27,12 @@ Additionally, I have added two other folders:
 - **.emacs.rc/** : For certain run commands. In particular, the **rc.el** file is present in this (contains certain definitions, such as for require, etc.)
 - **.emacs.local/** : For additional plugins that have some extensive configuration. For example, **simpc-mode**.
 
-**Note:** The rc.el and simpc-mode.el files are authored by Tsoding / rexim, and so I have not added them here by myself. (They can be found at https://github.com/rexim/dotfiles).
+### Links for additional files
 
-To get tasm-mode.el, see https://github.com/rachitdhar/tasm
-To get llvm-mode.el, see https://github.com/nverno/llvm-mode
+- The rc.el and simpc-mode.el files are authored by Tsoding / rexim. They can be found at https://github.com/rexim/dotfiles
+- To get tasm-mode.el, see https://github.com/rachitdhar/tasm
+- To get llvm-mode.el, see https://github.com/nverno/llvm-mode
+- To get em-mode.el, see https://github.com/rachitdhar/em
 
 ## Features
 
