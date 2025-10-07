@@ -65,6 +65,9 @@
 (require 'tasm-mode)
 (add-to-list 'auto-mode-alist '("\\.tasm\\'" . tasm-mode))
 
+(require 'em-mode)
+(add-to-list 'auto-mode-alist '("\\.em\\'" . em-mode))
+
 (require 'llvm-mode)
 (add-to-list 'auto-mode-alist '("\\.ll\\'" . llvm-mode))
 
