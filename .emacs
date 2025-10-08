@@ -41,14 +41,17 @@
 
 ;;(rc/require-theme 'gruber-darker)
 ;;(rc/require-theme 'constant)
-(rc/require-theme 'naysayer)
+;;(rc/require-theme 'naysayer)
 
-(set-face-attribute 'font-lock-preprocessor-face nil
-                   :foreground "#d9d2e9")
+(rc/require 'doom-themes)
+(load-theme 'doom-dark+ t)
+
+;;(set-face-attribute 'font-lock-preprocessor-face nil
+;;                   :foreground "#d9d2e9")
 
 (set-face-attribute 'default nil
 		    :family "Consolas"
-		    :height 120
+		    :height 110
 		    :weight 'normal) ; font
 
 ;; *** plugins ***
