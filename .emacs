@@ -18,6 +18,10 @@
 (setq default-directory "D:/github/")
 ;;(add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
 
+;; set opacity
+(set-frame-parameter (selected-frame) 'alpha '(90 90))
+(add-to-list 'default-frame-alist '(alpha 90 90))
+
 ;; Move Text
 (rc/require 'move-text)
 (global-set-key (kbd "M-p") 'move-text-up)
