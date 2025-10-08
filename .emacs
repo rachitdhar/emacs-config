@@ -44,6 +44,10 @@
 ;;(rc/require-theme 'naysayer)
 
 (rc/require 'doom-themes)
+
+(setq doom-themes-enable-bold nil
+      doom-themes-enable-italic nil)
+
 (load-theme 'doom-dark+ t)
 
 ;;(set-face-attribute 'font-lock-preprocessor-face nil
