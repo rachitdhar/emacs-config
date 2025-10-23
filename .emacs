@@ -19,8 +19,8 @@
 ;;(add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
 
 ;; set opacity
-(set-frame-parameter (selected-frame) 'alpha '(95 95))
-(add-to-list 'default-frame-alist '(alpha 95 95))
+(set-frame-parameter (selected-frame) 'alpha '(100 100)) ;; try 95 95 for translucency
+(add-to-list 'default-frame-alist '(alpha 100 100))
 
 ;; Move Text
 (rc/require 'move-text)
