@@ -17,6 +17,7 @@
 
 (setq default-directory "D:/github/")
 ;;(add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
+(add-to-list 'default-frame-alist '(width . 120))
 
 ;; set opacity
 (set-frame-parameter (selected-frame) 'alpha '(100 100)) ;; try 95 95 for translucency
@@ -53,6 +54,7 @@
       doom-themes-enable-italic nil)
 
 (load-theme 'doom-dark+ t)
+;;(load-theme 'gruvbox-light-hard t)
 
 ;;(set-face-attribute 'font-lock-preprocessor-face nil
 ;;                   :foreground "#d9d2e9")
@@ -65,13 +67,17 @@
 ;; *** plugins ***
 (add-to-list 'load-path "~/.emacs.local/")
 
-(require 'simpc-mode)
-(add-to-list 'auto-mode-alist '("\\.c\\'" . simpc-mode))
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+;;(require 'simpc-mode)
+;;(add-to-list 'auto-mode-alist '("\\.c\\'" . simpc-mode))
+;;(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
-(require 'simpcpp-mode)
-(add-hook 'c++-mode-hook #'simpcpp-indent-mode)
+;;(require 'simpcpp-mode)
+;;(add-hook 'c++-mode-hook #'simpcpp-indent-mode)
+
+(setq c-default-style "k&r"
+      c-basic-offset 4
+      indent-tabs-mode t)
 
 (require 'tasm-mode)
 (add-to-list 'auto-mode-alist '("\\.tasm\\'" . tasm-mode))
