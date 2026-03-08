@@ -14,6 +14,7 @@
 (scroll-bar-mode 0)
 (setq inhibit-startup-screen t)
 (setq make-backup-files nil)
+(setq ring-bell-function 'ignore) ;; to disable the windows error sound
 
 (setq default-directory "D:/github/")
 ;;(add-to-list 'default-frame-alist '(fullscreen . maximized)) ; to start emacs in fullscreen
